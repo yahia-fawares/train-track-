@@ -1,0 +1,33 @@
+.logo {
+    width: 100px;
+}
+
+.icon {
+    color: black;
+    font-size: larger;
+}
+
+input {
+    width: 350px;
+}
+
+@media (max-width:750px) {
+    input {
+        width: 220px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:450px) {
+    input {
+        width: 180px;
+        margin-bottom: 10px;
+    }
+}

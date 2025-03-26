@@ -1,0 +1,27 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-center">
+            <img class="navbar-brand logo" src="assets/images/logo.png"
+                alt="logo">
+            <div class="mx-auto text-center">
+                <form class="d-flex justify-content-center" role="search">
+                    <input class="form-control me-2" type="search"
+                        placeholder="Search For Station..." aria-label="Search">
+
+                    <button class="btn btn-outline-success"
+                        type="submit">Search</button>
+                </form>
+            </div>
+            @if(isLogin()){
+            <div class="me-2">
+                <i class="fa-solid fa-user icon"></i>
+            </div>
+            }@else {
+            <div>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+            }
+
+        </div>
+    </nav>
+</header>
