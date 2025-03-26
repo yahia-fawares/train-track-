@@ -1,0 +1,67 @@
+
+<div class="login-container" style="margin-bottom: 10%;">
+    <form class="login-form" formGroup="registerForm" >
+        <h1 style="font-weight: bold;">Register</h1>
+
+
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" formControlName="FirstName"  id="first_name" placeholder="Enter first_name">
+            <span style="color: red;" *ngIf="registerForm.controls['FirstName'].hasError('required')">First Name is required</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" formControlName="LastName"  id="last_name" placeholder="Enter last_name">
+            <span style="color: red;" *ngIf="registerForm.controls['LastName'].hasError('required')">Last Name is required</span>
+        </div>
+
+        <div class="form-group">
+    <label for="date_of_birth">Date of Birth</label>
+    <input type="date" class="form-control" formControlName="DateOfBirth" id="date_of_birth" placeholder="Enter Date of Birth" >
+    <span style="color: red;" *ngIf="registerForm.controls['DateOfBirth'].hasError('required')">Date of Birth is required</span>
+</div>
+
+       <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control"formControlName="Gender" id="gender">
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <span style="color: red;" *ngIf="registerForm.controls['Gender'].hasError('required')">Gender is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="profile_image">profile_image</label>
+            <input type="file" #file  formControlName="ProfileImage"  (change)="UploadImage(file.files)">
+            
+            <span style="color: red;" *ngIf="registerForm.controls['ProfileImage'].hasError('required')">Image is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="city">city</label>
+            <input type="text" class="form-control" formControlName="City"  id="city" placeholder="Enter city">
+            <span style="color: red;" *ngIf="registerForm.controls['City'].hasError('required')">city is required</span>
+        </div>
+       
+        
+        <div class="form-group">
+            
+            <label for="email">Email address</label>
+            <input type="email" class="form-control"formControlName="Email"  id="email" placeholder="Enter email">
+            <span style="color: red;" *ngIf="registerForm.controls['Email'].hasError('required') ">Enter Your Email !</span>
+            <span style="color: red;" *ngIf="registerForm.controls['Email'].hasError('email') ">Enter Valid Email !</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="Password"  id="password" placeholder="Enter password">
+            <span style="color: red;" *ngIf="registerForm.controls['Password'].hasError('required')">your password is required</span>
+            <span style="color: red;" *ngIf="registerForm.controls['Password'].hasError('minlength')"> password at leats 8 character</span>
+        </div>
+        <button type="submit" (click)="Register()" class="btn btn-primary btn-block">Register</button>
+
+        <div style="margin-top: 15px;"><a  (click)="GoToLogin()" style="cursor: pointer; color: #6e8efb;">You have account !</a></div>
+    </form>
+</div>
